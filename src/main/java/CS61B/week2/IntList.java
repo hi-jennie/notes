@@ -1,4 +1,4 @@
-package CS61B;
+package CS61B.week2;
 
 public class IntList {
     public int first;
