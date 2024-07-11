@@ -14,9 +14,11 @@ public class SLList {
         }
     }
     private IntNode first;
+    private int size;
 
     public SLList(int i){
         first = new IntNode(i,null);
+        size = 1;
     }
 
     public int getFirst(){
@@ -26,6 +28,7 @@ public class SLList {
     // add item to the beginning of the list;
     public void addFirst(int i){
         first = new IntNode(i,first);
+        size++;
     }
 
     // add item to the end of the list;
@@ -36,25 +39,32 @@ public class SLList {
             p = p.next;
         }
         p.next = new IntNode(i,null);
+        size++;
     }
 
     // helper method
+    /**
     private static int size(IntNode p){
         if(p.next==null){
             return 1;
         }
         return 1+size(p.next);
-    }
+    }*/
 
     // the true size() method that user can use,more readable;
+    /*8
     public int size(){
         return size(first);
-    }
+    }*/
 
+    public int size(){
+        return size;
+    }
     public static void main(String[] args) {
         SLList s = new SLList(15);
         s.addFirst(10);
         s.addFirst(5);
-        System.out.println(s.getFirst());
+        s.addLast(20);
+        System.out.println(s.size());
     }
 }
