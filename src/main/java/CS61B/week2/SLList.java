@@ -13,29 +13,40 @@ public class SLList {
             next = n;
         }
     }
-    private IntNode first;
+
+    /**
+     * we change first to a sentinel, making this class more general, we can avoid it that the first IntNode is a null
+     * if the first IntNode is a null (using constructor with args),then the addLast method will produce an exception(.next)
+     */
+    private IntNode sentinel;
     private int size;
 
+    public SLList(){
+        // the item of the sentinel can be any number
+        sentinel = new IntNode(0,null);
+        size = 0;
+    }
     public SLList(int i){
-        first = new IntNode(i,null);
+        sentinel = new IntNode(0,null);
+        sentinel.next = new IntNode(i,null);
         size = 1;
     }
 
     public int getFirst(){
-        return first.item;
+        return sentinel.next.item;
     }
 
     // add item to the beginning of the list;
     public void addFirst(int i){
-        first = new IntNode(i,first);
+        sentinel.next = new IntNode(i, sentinel.next);
         size++;
     }
 
     // add item to the end of the list;
     public void addLast(int i){
-        IntNode p = first;
+        IntNode p = sentinel;
         // help us reach the end of the list
-        while(!(p.next==null)){
+        while(p.next!=null){
             p = p.next;
         }
         p.next = new IntNode(i,null);
