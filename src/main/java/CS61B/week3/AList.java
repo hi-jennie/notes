@@ -86,75 +86,77 @@ class AListDemo {
         System.out.println(aL.getCapacity());
     }
 }
-//public class AList<T> {
-//    private int size;
-//    private T[] items;
-//
-//    public AList() {
-//        // items = new int[100];
-//        // 不能直接用new T[],因为没有T是什么类型，编译器不知道什么意思
-//        items = (T[]) new Object[100];
-//        size = 0;
-//    }
-//
-//    public T get(int i) {
-//        return items[i];
-//    }
-//
-//    public T getLast() {
-//        return items[size - 1];
-//    }
-//
-//    public void resize(int i) {
-//        T[] a = (T[]) new Object[i];
-//        System.arraycopy(items, 0, a, 0, size);
-//        items = a;
-//    }
-//
-//    public void downSize() {
-//        if (size * 4 < items.length) {
-//            T[] a = (T[]) new Object[items.length / 2];
-//            System.arraycopy(items, 0, a, 0, size);
-//            items = a;
-//            downSize();
-//        }
-//    }
-//
-//    public void addLast(T item) {
-//        if (size == items.length) {
-//            resize(size * 2);
-//        }
-//        items[size] = item;
-//        size++;
-//    }
-//
-//    public T remove(int index) {
-//        T item = items[index];
-//        for (int i = index; i < size - 1; i++) {
-//            items[i] = items[i + 1];
-//        }
-//        // clear the last element
-//        items[size - 1] = null;
-//        size--;
-//        downSize();
-//
-//        return item;
-//    }
-//
-//    public int getSize() {
-//        return size;
-//    }
-//
-//    public void main(String[] args) {
-//        AList<Integer> aL = new AList<>();
-//        for (int i = 0; i < 10; i++) {
-//            aL.addLast(i);
-//        }
-//        aL.remove(9);
-//        for (int i = 0; i < aL.size; i++) {
-//            System.out.println(get(i));
-//        }
-//
-//        System.out.println(aL.items.length);
-//    }
-//}
+/**
+ * public class AList<T> {
+ * private int size;
+ * private T[] items;
+ * <p>
+ * public AList() {
+ * // items = new int[100];
+ * // 不能直接用new T[],因为没有T是什么类型，编译器不知道什么意思
+ * items = (T[]) new Object[100];
+ * size = 0;
+ * }
+ * <p>
+ * public T get(int i) {
+ * return items[i];
+ * }
+ * <p>
+ * public T getLast() {
+ * return items[size - 1];
+ * }
+ * <p>
+ * public void resize(int i) {
+ * T[] a = (T[]) new Object[i];
+ * System.arraycopy(items, 0, a, 0, size);
+ * items = a;
+ * }
+ * <p>
+ * public void downSize() {
+ * if (size * 4 < items. Length) {
+ * T[] a = (T[]) new Object[items.length / 2];
+ * System.arraycopy(items, 0, a, 0, size);
+ * items = a
+ * downSize();
+ * }
+ * }
+ * <p>
+ * public void addLast(T item) {
+ * if (size == items. Length) {
+ * resize (size * 2);
+ * }
+ * items[size] = item;
+ * size++;
+ * }
+ * <p>
+ * public T remove(int index) {
+ * T item = items[index];
+ * for (int i = index; i < size - 1; i++) {
+ * items[i] = items[i + 1];
+ * }
+ * // clear the last element
+ * items[size - 1] = null;
+ * size--;
+ * downSize();
+ * <p>
+ * return item;
+ * }
+ * <p>
+ * public int getSize() {
+ * return size;
+ * }
+ * <p>
+ * public void main(String[] args) {
+ * AList<Integer> aL = new AList<>();
+ * for (int i = 0; i < 10; i++) {
+ * aL.addLast(i);
+ * }
+ * aL.remove(9);
+ * for (int i = 0; i < aL.size; i++) {
+ * System.out.println(get(i));
+ * }
+ * <p>
+ * System.out.println(aL.items.length);
+ * }
+ * }
+ */
