@@ -13,11 +13,12 @@ public class SLList {
         return grid;
     }
 
+    // Helper method to fill in the grid, numFilled is the number of elements that have been filled in the grid so far
     private void gridHelper(int[][] grid, Node curr, int numFilled) {
         if (curr == sentinel || numFilled >= grid.length * grid[0].length) {
             return;
         }
-
+        // Calculate the row and column of the current item
         int row = numFilled / grid[0].length;
         int col = numFilled % grid[0].length;
         grid[row][col] = curr.item;
