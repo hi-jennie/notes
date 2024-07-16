@@ -21,6 +21,7 @@ public class SLList {
         int row = numFilled / grid[0].length;
         int col = numFilled % grid[0].length;
         grid[row][col] = curr.item;
+
         gridHelper(grid, curr.next, numFilled + 1);
     }
 
