@@ -3,7 +3,8 @@ package CS61B.week4;
 
 import java.util.Comparator;
 
-// Dog class implements Comparable interface and it has to rewrite the compareTo method
+// Dog class implements Comparable interface ，so it has to rewrite the compareTo method
+// <Dog>中的Dog表示比较对象是D哦个，因此compareTo的参数必须是Dog类
 public class Dog implements Comparable<Dog> {
     private final String type;
     private final int size;
