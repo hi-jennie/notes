@@ -26,6 +26,8 @@ public class ArraySet<T> implements Iterable<T> {
         for (Integer i : set) {
             System.out.println(i);
         }
+
+        System.out.println(set);
     }
 
     // Adds an element to the set
@@ -88,6 +90,43 @@ public class ArraySet<T> implements Iterable<T> {
     // because the ArraySetIterator is private, so we write an iterator() method to gain access to the iterator
     public Iterator<T> iterator() {
         return new ArraySetIterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) {
+                sb.append(elements[i]);
+                sb.append("}");
+                break;
+            }
+            sb.append(elements[i]);
+            sb.append(",");
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        // it's a convention to check if this and other are the same object
+        if (this == other) {
+            return true;
+        }
+        if (other instanceof ArraySet otherSet) {
+            // it's a convention to check if the size is the same
+            if (this.size != otherSet.size) {
+                return false;
+            }
+            for (T x : this) {
+                if (!otherSet.contains(x)) {
+                    return false;
+                }
+            }
+            // after checking all the possible false cases, we can return true
+            return true;
+        }
+        return false;
     }
 
     // create an inner iterator class
