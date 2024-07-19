@@ -1,7 +1,9 @@
 package CS61B.week4;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 // implements Iterable<T> to tell the compiler that we have an iterator method, so we can use the fancy and advanced for each
 public class ArraySet<T> implements Iterable<T> {
@@ -28,6 +30,18 @@ public class ArraySet<T> implements Iterable<T> {
         }
 
         System.out.println(set);
+    }
+
+    // T... stuff: 这是一个可变参数（varargs），表示可以传递零个或多个类型为 T 的参数。可变参数实际上是一个数组，因此在方法内部，stuff 被当作 T[] 处理。
+    public static <T> ArraySet<T> of(T... stuff) {
+        // 创建一个新的 ArraySet 实例，returnSet 用于存储传入的元素。
+        ArraySet<T> returnSet = new ArraySet<T>();
+        // 使用增强的 for 循环遍历 stuff 数组中的每个元素。
+        for (T x : stuff) {
+            // 将当前元素 x 添加到 returnSet 中。
+            returnSet.add(x);
+        }
+        return returnSet;
     }
 
     // Adds an element to the set
@@ -92,19 +106,29 @@ public class ArraySet<T> implements Iterable<T> {
         return new ArraySetIterator();
     }
 
+    /**
+     * @Override public String toString() {
+     * StringBuilder sb = new StringBuilder("{");
+     * for (int i = 0; i < size; i++) {
+     * if (i == size - 1) {
+     * sb.append(elements[i]);
+     * sb.append("}");
+     * break;
+     * }
+     * sb.append(elements[i]);
+     * sb.append(",");
+     * }
+     * return sb.toString();
+     * }
+     */
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("{");
-        for (int i = 0; i < size; i++) {
-            if (i == size - 1) {
-                sb.append(elements[i]);
-                sb.append("}");
-                break;
-            }
-            sb.append(elements[i]);
-            sb.append(",");
+        List<String> listOfItems = new ArrayList<>();
+        for (T x : this) {
+            listOfItems.add(x.toString());
         }
-        return sb.toString();
+        return STR."{\{String.join(",", listOfItems)}}";
     }
 
     @Override
