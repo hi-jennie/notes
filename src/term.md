@@ -7,3 +7,8 @@
 * ConcurrentModificationException：
 * naming conflict:
 * disambiguate:消除歧义，使某个词、短语、句子或概念变得明确或清楚
+* runtime error or compile time error:
+* empty method bodies:
+* ClassCastException：
+* Subtype Polymorphism：
+* dynamic method selection：
