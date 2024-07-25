@@ -13,7 +13,7 @@ public class WeightedQuickUnionDS implements DisJointSets {
         }
     }
 
-    // 查找操作，带路径压缩
+    // 查找操作， 带路径压缩
     private int find(int p) {
         if (root[p] != -1) {
             root[p] = find(root[p]); // 路径压缩
