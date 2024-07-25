@@ -11,6 +11,6 @@ public class OHQueue implements Iterable<OHRequest> {
 
     @Override
     public Iterator<OHRequest> iterator() {
-        return new OHIterator(request);
+        return new TYIterator(request);
     }
 }
