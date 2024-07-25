@@ -2,7 +2,7 @@
 * meronym：令人憎恶的事物”或“可憎的行为”
 * hierarchical abstraction:
 * dynamic method/type
-* compile-time/static type/method:
+* compile-time/static type/method:static type checking
 * Kludge:笨拙的、不优雅的、不精致的
 * ConcurrentModificationException：
 * naming conflict:
@@ -12,3 +12,10 @@
 * ClassCastException：
 * Subtype Polymorphism：
 * dynamic method selection：
+* one size fits all:
+* algorithm scales:
+* lower order term:
+* function signature:
+* syntax typos:
+* typecast:theoretically possible
+* child-parent relationship:
