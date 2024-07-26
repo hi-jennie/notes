@@ -11,7 +11,7 @@ public class IteratorOfIterators implements Iterator<Integer> {
     public IteratorOfIterators(List<Iterator<Integer>> a) {
         iterators = new LinkedList<>();
         for (Iterator<Integer> integerIterator : a) {
-            // if integerIterator.hasNext() == false, it represents that the current integerIterator is a sentinel
+            // if integerIterator.hasNext() == false, it represents that the current integerIterator is a sentinel or an empty iterator
             // we don't need to add a sentinel
             // 过滤中间和首尾的空的iterator；
             if (integerIterator.hasNext()) {
