@@ -1,4 +1,4 @@
-package CS61B.week5;
+package CS61B.DS;
 
 import java.util.ArrayList;
 

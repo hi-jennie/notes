@@ -59,6 +59,12 @@
     * **Integer.parseInt("10")**_将**字符串**转换为int,除了Character类，其他都有这个方法
     * String Integer.toBinaryString(10) -转换为二进制
     * “1”-“0”：int 1
+* localDate:
+    * .of(2019,7,26)
+    * .now()
+* Calendar:
+    * Calendar.getInstance()
+* BasicSearch:
     
 
 
