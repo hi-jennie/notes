@@ -64,7 +64,15 @@
     * .now()
 * Calendar:
     * Calendar.getInstance()
-* BasicSearch:
+* Search:
+    * **basic search:**
+    * **binarySearch**:min/max/ mid=（max+min)/2
+    * **Interpolation search差值查找-**：**Data distribution is uniform.**-等比例缩放
+        * mid = min + ((key-arr[min])/(arr[max]-arr[min]))*(max-min)
+    * **blockSearch** :regular and irregular(块之间没有交集)-可查找与添加
+    * **Fibonacci search**
+    * hashSearch:hashMap
+    * treeSearch:binaryTree
     
 
 
