@@ -76,8 +76,12 @@
 * class AlienAlphabet:
 * class IteratorOfIterators:
 * 04 slides:
+* Hacker-JavaIterator
+* StringBuilder :**insert**(index,value);append()
 
+## 7.27
 
+* bubbleSort:arr.length-1
 
 
 

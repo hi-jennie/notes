@@ -26,6 +26,7 @@ public class JavaToBinaryString {
         StringBuilder result = new StringBuilder();
         while (n != 0) {
             int number = n % 2;
+            // insert
             result.insert(0, number);
             n = n / 2;
         }

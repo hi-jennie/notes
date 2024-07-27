@@ -3,7 +3,7 @@ package CS61B.week5;
 import java.util.Comparator;
 
 public class AlienAlphabet {
-    // 这个是外星人的letter 顺序
+    // 这个是外星人的 letter 顺序
     private final String order;
 
     public AlienAlphabet(String alphabetOrder) {
