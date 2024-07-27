@@ -12,6 +12,14 @@ public class JavSort {
         for (int i : selSortArr) {
             System.out.print(i + " ");
         }
+
+        int[] insertion = insertionSort(arr);
+        for (int i : insertion) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println(recursionSum(100));
+        System.out.println(factorialRecursion(5));
     }
 
     // 相邻元素两两比较
@@ -43,5 +51,47 @@ public class JavSort {
             }
         }
         return arr;
+    }
+
+    public static int[] insertionSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            // There are cases of unnecessary iterations.
+            // when arr[i]>arr[i-1], no need to compare with the previous elements.
+//            for (int j = i; j > 0; j--) {
+//                if (arr[j] < arr[j - 1]) {
+//                    swap(arr, j, j - 1);
+//                }
+//            }
+
+            // used to store the original value of i;
+            int j = i;
+            while (j > 0 && arr[j] < arr[j - 1]) {
+                swap(arr, j, j - 1);
+                j--;
+            }
+        }
+        return arr;
+    }
+
+    public static int[] quickSort(int[] arr, int start, int end) {
+        return arr;
+    }
+
+    // Determine the base case.
+    public static int recursionSum(int i) {
+        // Determine the base case.
+        if (i == 1) {
+            return i;
+        }
+        return recursionSum(i - 1) + i;
+    }
+
+    //  求阶乘
+    public static int factorialRecursion(int i) {
+        if (i == 1) {
+            return i;
+        }
+        // 递归的参数要不断的接近递归基
+        return i * factorialRecursion(i - 1);
     }
 }

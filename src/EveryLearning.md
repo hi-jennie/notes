@@ -81,10 +81,20 @@
 
 ## 7.27
 
-* bubbleSort:arr.length-1
+* **bubbleSort**:arr.length-1
+* **selectionSort**:
+* **insertionSort**:
+* recursionSum/factorialRecursion：**p180递归算法**
+* **quickSort**:很快
+* **Arrays**: some useful tools
+    * toString(arr)
+    * binarySearch(arr,value)：arr有序且升序如果存在返回索引，不存在返回-插入点-1
+    * copyOf(old arr,**new arr length**)/copeOfRang()-前闭后开
+    * fill(arr,item)
+    * sort(arr)——默认升序
+    * **!!!!sort(arr,comparator)**——Dog.comparator
 
-
-
-
-
+* lambda_**JavaLambda**:对象不重要，interface方法更重要——简化接口匿名内部类的书写
+    * 只能简化函数式接口的的匿名内部类的书写
+    * 函数式接口：有且仅有一个抽象方法的接口：**comparable/iterable**
 
