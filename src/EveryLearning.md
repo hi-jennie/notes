@@ -153,5 +153,9 @@
     * no primitive type(<int,double,boolean,char>)
     * 指定具泛型的具体类型之后，传递数据时可以传递该类类型或其子类类型
     * 如果不写泛型的具体类型，默认位Object类型
+    * add2() method:
+    * 泛型接口：
+        * 实现类给出具体类型:class MyArrayList implements MyList<String>
+        * 实例化时给出具体类型:class MyArrayList<T> implements MyList<T>
 
 

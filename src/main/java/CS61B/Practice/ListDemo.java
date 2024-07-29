@@ -1,9 +1,6 @@
 package CS61B.Practice;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ListDemo {
     public static void main(String[] args) {
@@ -14,6 +11,12 @@ public class ListDemo {
         list.add(3);
         list.add(4);
         list.add(5);
+
+        ArrayList<String> array = new ArrayList<>();
+        ListDemo.add2(array, "jennie", "Rustin");
+        for (String s : array) {
+            System.out.println(s);
+        }
 
         // remove the element at index 1
         list.remove(1);
@@ -59,5 +62,9 @@ public class ListDemo {
         arr.add(1);
         arr.add("jennie");
         System.out.println(arr);
+    }
+
+    public static <T> void add2(ArrayList<T> arr, T... t1) {
+        Collections.addAll(arr, t1);
     }
 }
