@@ -1,4 +1,6 @@
-package CS61B.Practice;
+package CS61B.DS;
+
+import CS61B.Practice.Friend;
 
 import java.util.Arrays;
 import java.util.Comparator;

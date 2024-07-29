@@ -1,4 +1,4 @@
-package CS61B.Practice;
+package CS61B.DS;
 
 public class Fibonacci {
     public static void main(String[] args) {

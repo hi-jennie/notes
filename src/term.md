@@ -19,3 +19,4 @@
 * syntax typos:
 * typecast:theoretically possible
 * child-parent relationship:
+* cursor：光标

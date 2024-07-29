@@ -107,7 +107,7 @@
     * **!!!ClimbStairs.java**:
 * 集合：
     * collection（单列集合-interface）：List/Set
-    * List:添加的元素有序(存取有序）、可重复、有索引[]
+    * List:添加的元素有序(存取有序）、可重复、有索引
     * Set:添加的元素无序、不重复、无索引
     * Collection<String> coll = new ArrayList();
     * coll.add():if add item to a List,return true; if add item to a Set(if the item already exist),return false
@@ -128,4 +128,30 @@
         * Iterator<String> it = list.iterator();
         * next():Remove the current element and move the iterator to the next position.
     * enhanced for loop:for-each loop:所有的单列结合和数组都可以使用增强for循环
-   
+
+## 7.29
+
+* List：ListDemo.java
+    * void add(index,element):原来索引元素向后挪
+    * remove(index)：返回被删除的元素
+    * set(index,element):modify a specific element
+    * get(index)
+    * **how to iterate**:five ways
+        * **iterator:.remove()**
+        * **ListIterator**:lsIt.add()/lsIt.remove()
+        * enhanced for
+        * Lambda expression
+        * ordinary for:操作索引
+* stack(LIFO)/queue(FiFO)
+* **List：ArrayList/LinkedList(single\double)/vector**
+    * ArrayList:when we add the first element, we create an array at size 10; resize at 1.5 times,addAll()
+    * LinkedList:addFirst()/addLast()/removeFirst()/removeLast()
+    * expectModCount/modCount;
+* **generics**:
+    * 不写type都以Object的方式存储，但会导致无法访问子类的特有功能（把runtime期间存在的问题提前到compile
+      time，避免了强制类型转换可能出现的异常）
+    * no primitive type(<int,double,boolean,char>)
+    * 指定具泛型的具体类型之后，传递数据时可以传递该类类型或其子类类型
+    * 如果不写泛型的具体类型，默认位Object类型
+
+
