@@ -104,4 +104,28 @@
     * FriendTest.java：里面对temp的处理
     * Fibonacci.java:
     * Peach.java:
-    * ClimbStairs.java:
+    * **!!!ClimbStairs.java**:
+* 集合：
+    * collection（单列集合-interface）：List/Set
+    * List:添加的元素有序(存取有序）、可重复、有索引[]
+    * Set:添加的元素无序、不重复、无索引
+    * Collection<String> coll = new ArrayList();
+    * coll.add():if add item to a List,return true; if add item to a Set(if the item already exist),return false
+    * coll.remove(item,not index):if remove successfully,return true
+    * **coll.contains()**:if the item exist,return true
+        * 细节：contains()调用的是equals()方法,如果是自定义类，**需要重写equals()方法**——理一下思路(
+          比如同一个学生姓名年龄相同就认为一直，就算作contains)
+    * coll.isEmpty():if the collection is empty,return true
+    * coll.size():return the size of the collection
+    * coll.clear():clear the collection
+* 迭代器遍历：**Iterator**
+    * noSuchElementException:Calling `next()` when there are no elements.
+    * After the iterator has finished traversing, the pointer does not reset: a new iterator needs to be obtained for
+      another traversal.
+    * When iterating, you **cannot** use collection methods to **add or remove elements**:
+      ConcurrentModificationException(*
+      *iterator.remove() is allowed)**
+        * Iterator<String> it = list.iterator();
+        * next():Remove the current element and move the iterator to the next position.
+    * enhanced for loop:for-each loop:所有的单列结合和数组都可以使用增强for循环
+   
