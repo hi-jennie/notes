@@ -105,9 +105,8 @@
     * Fibonacci.java:
     * Peach.java:
     * **!!!ClimbStairs.java**:
-* 集合：
-    * collection（单列集合-interface）：List/Set
-    * List:添加的元素有序(存取有序）、可重复、有索引
+* 集合：* collection（单列集合-interface）：List/Set
+* List:添加的元素有序(存取有序）、可重复、有索引
     * Set:添加的元素无序、不重复、无索引
     * Collection<String> coll = new ArrayList();
     * coll.add():if add item to a List,return true; if add item to a Set(if the item already exist),return false
@@ -157,5 +156,57 @@
     * 泛型接口：
         * 实现类给出具体类型:class MyArrayList implements MyList<String>
         * 实例化时给出具体类型:class MyArrayList<T> implements MyList<T>
+    * generics.java
 
+##
 
+* binary search tree:how to iterate
+    * preOrder:root-left-right
+    * **inOrder:left-root-right**:from small to large
+    * postOrder:left-right-root
+    * levelOrder:root-left-right
+* balanced tree:AVL tree——
+    * when the height of left and right subtree differ by more than 1, we need to rotate the tree to balance it
+    * 左旋和右旋保持平衡 四种不平衡的情况下如何保持平衡——downside：添加节点的时间浪费
+* **Red-Black Tree**：a special binary search tree（not necessarily balanced)
+    * 每一个节点必须位red or black，the root node必须是black
+    * 如果一个节点没有子节点或者父节点，则盖节点的指针属性为nil，视为叶节点，每个叶节点是black
+    * 如果一个节点是红色的，那么它的子节点必须是黑色的（不能出现两个红色节点相连的情况）；
+    * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
+    * **添加节点时：默认红色效率更高**
+
+##                                     
+
+* **Set**:**Interface** SetDemo.java
+* **HashSet**:**no order**，**no duplicate**，**no index**
+* **LinkedHashSet**:**order**，**no duplicate**，**no index**
+* **TreeSet**:**sorted**，**no duplicate**，**no index**
+    * add(E): add an element to the set,if the element already exists,return false
+    * remove(E): remove an element from the set
+    * contains(Object): check if the set contains an element
+    * size(): return the number of elements in the set
+    * isEmpty(): check if the set is empty
+    * clear(): clear the set
+
+* hash value:
+    * 根据hashCode计算出来的int类型的整数（对象的整数表现形式——通识符）
+    * Object类：默认使用地址值进行计算
+    * 一般根据对象内部的属性重写hashCode()方法，重新计算hash value
+    * 如果没有重写hashCode方法，不同对象计算的hash value不同
+    * 如果重写了hashCode方法，相同对象计算的hash value相同
+    * hash conflict:不同对象计算的hash value相同
+* **hashSet：**
+    * 创建一个默认长度16的数组，加载因子0.75，当数组长度超过12时，扩容为原来的2倍
+    * 根据元素的hashCode值计算出在数组中的位置，如果该位置没有元素null，则直接添加，如果有元素，则调用equals方法进行比较
+    * 如果equals方法返回true，则认为是重复元素，不添加；如果equals方法返回false，则认为不是重复元素，添加到数组中
+    * 一样：不存；不一样：存入数组，形成链表
+    * JDK8前：新元素存入数组，老元素挂在后面
+    * JDK8之后：新元素挂在老元素下面，当链表长度超过8时且数组长度大于等于64时，链表转为红黑树
+    * **如果集合中存储的是自定义对象，必须重写hashCode和equals方法**
+    * **no order**
+* **linkedHashSet**:**order**——存取顺序一致
+* **treeSet** :sorted——底层是红黑树
+  如果自定义类，需要实现comparable接口充血compareTo方法或者传入comparator
+    * 方式1:(默认)compareTo方法 return 负数，表示当前元素小，存入左边，正数表示当前元素大存右边；return 0 表示当前元素存在，舍弃
+    * 方式2:使用comparator比较器，实现compare方法.当compareTo方法不满足需求时（已经存在不好修改），可以使用comparator比较器
+    * 方式2和方式1都存在时，优先使用方式2

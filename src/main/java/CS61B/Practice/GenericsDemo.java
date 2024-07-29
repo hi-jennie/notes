@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class GenericsDemo {
     public static void main(String[] args) {
         ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(new Cat());
+
         ArrayList<Cat> cats = new ArrayList<>();
         ArrayList<Maine> maines = new ArrayList<>();
         ArrayList<CS61BStudent> students = new ArrayList<>();
@@ -42,15 +44,15 @@ public class GenericsDemo {
 
     }
 
-    class Animal {
+    static class Cat extends Animal {
 
     }
 
-    class Cat extends Animal {
+    static class Animal {
 
     }
 
-    class Maine extends Cat {
+    static class Maine extends Cat {
 
     }
 
