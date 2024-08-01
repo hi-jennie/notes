@@ -13,6 +13,27 @@ public class WeightedQuickUnionDS implements DisJointSets {
         }
     }
 
+    // solution 2
+    private static int find2(int val) {
+        int p = root(val);
+        if (p == -1) {
+            return val;
+        } else {
+            int r = find2(p);
+            // using path compression.
+            setParent(val, r);
+            return r;
+        }
+
+    }
+
+    private static void setParent(int val, int r) {
+    }
+
+    public static int root(int i) {
+        return 1;
+    }
+
     // 查找操作， 带路径压缩
     private int find(int p) {
         if (root[p] != -1) {
