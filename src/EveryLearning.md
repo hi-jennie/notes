@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                     
+##                                       
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -210,3 +210,7 @@
     * 方式1:(默认)compareTo方法 return 负数，表示当前元素小，存入左边，正数表示当前元素大存右边；return 0 表示当前元素存在，舍弃
     * 方式2:使用comparator比较器，实现compare方法.当compareTo方法不满足需求时（已经存在不好修改），可以使用comparator比较器
     * 方式2和方式1都存在时，优先使用方式2
+
+## 8.1
+
+* map：V getOrDefault(Object key, V defaultValue)

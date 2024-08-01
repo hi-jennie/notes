@@ -20,3 +20,5 @@
 * typecast:theoretically possible
 * child-parent relationship:
 * cursor：光标
+* version control system
+* online hosting service
