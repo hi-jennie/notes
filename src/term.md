@@ -22,3 +22,5 @@
 * cursor：光标
 * version control system
 * online hosting service
+* Best/worst case vs. lower/upper bound analogy
+* lower order terms.

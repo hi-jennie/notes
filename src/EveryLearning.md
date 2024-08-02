@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                        
+##                                                        
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -215,3 +215,55 @@
 
 * map：V getOrDefault(Object key, V defaultValue)
 * week6:FindDuplicate.java
+
+## 8.2
+
+* git 各项操作
+* map(双列集合)
+    * **put (key,value)**:return the previous value of the key
+    * remove(key):return the value of the key
+    * get(key):return the value of the key
+    * containsKey(key):check if the map contains the key
+    * containsValue(value):check if the map contains the value
+    * size():return the number of key-value pairs
+    * isEmpty():check if the map is empty
+    * clear():clear the map
+    * .keySet()
+    * .entrySet()
+    * lambda expression to iterate the map
+* hashMap:no order/no duplicate/no index;都是指key
+    * 都是hash table的结构（如果key 一样，就会覆盖）
+    * 依赖hashCode方法和equals方法来保证键的唯一
+    * 如果key是自定义类，必须重写hashCode和equals方法，value不需要
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
