@@ -50,5 +50,20 @@ public class JavaTreeMap {
 
         // {Student{name='AoBy', id=2}=Vietnam, Student{name='Turkey', id=2}=Turkey, Student{name='Jennie', id=24}=China, Student{name='Rustin', id=28}=USA}
         System.out.println(students);
+
+        System.out.println(countFrequency("aababcabcdabcde"));
+    }
+
+    public static TreeMap<Character, Integer> countFrequency(String str) {
+        TreeMap<Character, Integer> result = new TreeMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            if (result.containsKey(str.charAt(i))) {
+                result.put(str.charAt(i), result.get(str.charAt(i)) + 1);
+            } else {
+                result.put(str.charAt(i), 1);
+            }
+        }
+
+        return result;
     }
 }
