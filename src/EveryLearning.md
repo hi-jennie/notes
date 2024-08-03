@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                        
+##                                                                   
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -219,7 +219,7 @@
 ## 8.2
 
 * git 各项操作
-* map(双列集合)
+* map(双列集合)——JavaMap.java and MapPractice.java
     * **put (key,value)**:return the previous value of the key
     * remove(key):return the value of the key
     * get(key):return the value of the key
@@ -235,6 +235,17 @@
     * 都是hash table的结构（如果key 一样，就会覆盖）
     * 依赖hashCode方法和equals方法来保证键的唯一
     * 如果key是自定义类，必须重写hashCode和equals方法，value不需要
+* LinkedHashMap:**order**(存取元素的顺序一致)——有双链表记录前一个和后一个node的地址值
+
+## 8.3
+
+* B-Tree：
+* treeMap：order/no index /no duplicate(底层和treeSet一样——都是红黑树结构)
+    * 实现comparable接口，指定比较规则
+    * 传递Comparator对象，指定比较规则(都用于比较优先级然后去重)
+        * // 如果返回值是0，表示两个对象是相等的，TreeMap会认为是同一个对象，不会插入
+          // 如果返回值是正数，表明o1比o2大，o1会存在红黑树右边
+          // 如果返回值是负数，表明o1比o2小，o1会存在红黑树左边
 
 
 

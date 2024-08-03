@@ -38,38 +38,5 @@ public class MapPractice {
         }
     }
 
-    public static class Student {
-        private final String name;
-        private final int age;
 
-        public Student(String name, int id) {
-            this.name = name;
-            this.age = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) {
-                return true;
-            }
-            if (o == null || getClass() != o.getClass()) {
-                return false;
-            }
-            Student student = (Student) o;
-            return age == student.age && name.equals(student.name);
-        }
-
-        @Override
-        public int hashCode() {
-            return 31 * name.hashCode() + age;
-        }
-    }
 }

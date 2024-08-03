@@ -20,7 +20,7 @@ public class WeightedQuickUnionDS implements DisJointSets {
             return val;
         } else {
             int r = find2(p);
-            // using path compression.
+            // using path compression. 
             setParent(val, r);
             return r;
         }
