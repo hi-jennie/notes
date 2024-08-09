@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                    
+##                                                                               
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -246,11 +246,47 @@
         * // 如果返回值是0，表示两个对象是相等的，TreeMap会认为是同一个对象，不会插入
           // 如果返回值是正数，表明o1比o2大，o1会存在红黑树右边
           // 如果返回值是负数，表明o1比o2小，o1会存在红黑树左边
+    * 不需要重写hashCode和equals方法
 
+## 8.4
 
+* relationship between B-tree and RB-tree
+* hash table:conception
+* floorMod:
 
+## 8.6
 
+* 判断是否为有效BST
 
+```java
+public class IsBST {
+
+    public static boolean isBST(BST T) {
+        return isBSTHelper(T, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    public static boolean isBSTHelper(BST T, int min, int max) {
+        if (T == null) {
+            return true;
+        } else if (T.key <= min || T.key >= max) {
+            return false;
+        } else {
+            return isBSTHelper(T.left, min, T.key)
+                    && isBSTHelper(T.right, T.key, max);
+        }
+    }
+
+}
+```
+
+## 8.9
+
+* 创建不可变集合：和python的tuple类似
+    * ImmutableList.java
+    * List.of
+    * Set.of
+    * Map.of
+    * Map.ofEntries
 
 
 
