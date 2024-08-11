@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                                    
+##                                                                                         
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -292,8 +292,14 @@ public class IsBST {
 
 * hacker:LambdaExpression.java(有一些细节有点重要记得回去看)
 * stream 流:**JavaStream.java**
+    * stream上的集合不会影响原来的集合
     * combine with lambda expression
     * utilise API like filter, map, reduce, collect to get my ideal result
+    * four methods to get my stream
+    * but Stream.of()方法的形参是一个可变参数，可以传递一堆零散的数据，也可以传递数组，但是数组必须是reference type
+        * 如果是基本数据类型，就会把整个数组当作一个元素放入Stream中
+    * **filter**:
+    * **limit**/**skip**
 
 
 
