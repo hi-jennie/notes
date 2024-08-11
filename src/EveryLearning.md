@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                               
+##                                                                                   
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -288,8 +288,12 @@ public class IsBST {
     * Map.of
     * Map.ofEntries
 
+## 8.11
 
-
+* hacker:LambdaExpression.java(有一些细节有点重要记得回去看)
+* stream 流:
+    * combine with lambda expression
+    * utilise API like filter, map, reduce, collect to get my ideal result
 
 
 
