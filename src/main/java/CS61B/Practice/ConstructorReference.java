@@ -1,6 +1,7 @@
 package CS61B.Practice;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.function.Function;
 
@@ -36,10 +37,22 @@ public class ConstructorReference {
                 return new Idol(name, age);
             }
         });
-
         // use constructor reference
         ls.stream().map(Idol::new).forEach(s -> System.out.println(s.name + " " + s.age));
+
+        reference();
     }
 
+    // toUpperCase() is a instance method of String
+    public static void reference() {
+        String[] arr = {"aaa", "bbb", "ccc"};
+        Arrays.stream(arr).map(new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                return s.toUpperCase();
+            }
+        }).forEach(str -> System.out.println(str));
 
+        Arrays.stream(arr).map(String::toUpperCase).forEach(uppStr -> System.out.println(uppStr));
+    }
 }
