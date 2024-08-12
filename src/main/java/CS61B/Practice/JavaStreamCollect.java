@@ -55,6 +55,7 @@ public class JavaStreamCollect {
         // use lambda expression to simplify
         Map<String, Integer> map2 = ls.stream().skip(3).collect(Collectors.toMap(s -> s.split("-")[0],
                 s -> Integer.parseInt(s.split("-")[1])));
+        System.out.println(map2);
 
     }
 }
