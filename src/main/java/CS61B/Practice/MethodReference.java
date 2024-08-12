@@ -34,16 +34,49 @@ public class MethodReference {
 
         // use lambda expression
         Collections.addAll(list, "1", "2", "3", "4", "5");
-        list.stream().map(new Function<String, Integer>() {
-            @Override
-            public Integer apply(String s) {
-                return Integer.parseInt(s);
+        list.stream().map(new         class Idol {
+            private final String name;
+            private final int age;
+
+            public Idol(String name, int age) {
+                this.name = name;
+                this.age = age;
             }
-        });
+
+            // the reason why we need to overload the constructor is that
+            // the parameter of the constructor reference should be the same as apply() method
+            public Idol(String origin) {
+                String[] arr = origin.split("-");
+                this.name = arr[0];
+                this.age = Integer.parseInt(arr[1]);
+            }
+        })
 
         // 1.use static method reference
         list.stream().map(Integer::parseInt).forEach(s -> System.out.println(s));
 
+        // use constructor reference
+Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) {
+                return Integer.parseInt(s);
+            }
+        }
+
+        // now we need to cast the array of string to the array of Idol
+        ArrayList<String> ls = new ArrayList<>();
+        Collections.addAll(ls, "Jennie-24", "Lisa-23", "Rose-25", "Jisoo-26");
+        ls.stream().map(new Function<String, Idol>() {
+            @Override
+            public Idol apply(String s) {
+                String[] arr1 = s.split("-");
+                String name = arr1[0];
+                int age = Integer.parseInt(arr1[1]);
+                return new Idol(name, age);
+            }
+        });
+        // use constructor reference
+        ls.stream().map(Idol::new).forEach(s -> System.out.println(s.name + " " + s.age));
 
     }
 
