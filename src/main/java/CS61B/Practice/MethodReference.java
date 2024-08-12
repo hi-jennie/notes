@@ -10,9 +10,13 @@ public class MethodReference {
         Integer[] arr = {1, 2, 3, 4, 5, 3, 57, 89};
         // use lambda expression
         Arrays.sort(arr, (o1, o2) -> o2 - o1);
+        new MethodReference().test();
 
         // use method reference
         Arrays.sort(arr, MethodReference::compare);
+        // use instance method reference
+        Arrays.sort(arr, new MethodReference()::compare2);
+
         System.out.println(Arrays.toString(arr));
         /*
         使用method reference的时候，我们需要注意以下几点：
@@ -37,12 +41,24 @@ public class MethodReference {
             }
         });
 
-        // use method reference
+        // 1.use static method reference
         list.stream().map(Integer::parseInt).forEach(s -> System.out.println(s));
+
 
     }
 
     public static int compare(int o1, int o2) {
         return o2 - o1;
+    }
+
+    public int compare2(int o1, int o2) {
+        return o2 - o1;
+    }
+
+    // 2. how to use this keyword in method reference
+    public void test() {
+        Integer[] arr = {1, 2, 3, 4, 5, 3, 57};
+        Arrays.sort(arr, this::compare2);
+        System.out.println(Arrays.toString(arr));
     }
 }
