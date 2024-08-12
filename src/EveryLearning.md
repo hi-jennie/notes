@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                                         
+##                                                                                               
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -290,7 +290,9 @@ public class IsBST {
 
 ## 8.11
 
-* hacker:LambdaExpression.java(有一些细节有点重要记得回去看)
+* Collections.addAll()
+* Arrays.toString(arr)
+* hacker:**LambdaExpression.java**(有一些细节有点重要记得回去看)
 * stream 流:**JavaStream.java**
     * stream上的集合不会影响原来的集合
     * combine with lambda expression
@@ -300,6 +302,11 @@ public class IsBST {
         * 如果是基本数据类型，就会把整个数组当作一个元素放入Stream中
     * **filter**:
     * **limit**/**skip**
+    * **distinct**
+    * **concat**:合并两个流之后再做相应的处理，如果两个集合里面是两个不同的自定义类，则会提升为共同的父类并且无法使用子类特有功能
+    * **map**:将一个元素转换为另一个元素
+
+    * **forEach**:遍历流中的每一个元素
 
 
 
