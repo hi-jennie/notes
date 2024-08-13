@@ -98,6 +98,10 @@ public class JavaStreamCollect {
         ArrayList<String> actresses = new ArrayList<>();
         Collections.addAll(actresses, "Scarlett,30", "Elizabeth,40", "Gwyneth,50", "Natalie,60");
 
+        // method reference String[]::new :actually we use the constructor of the String[] with a parameter to create a new array,this parameter is the length of the array
+        String[] acts = Stream.concat(actors.stream(), actresses.stream()).toArray(String[]::new);
+        System.out.println(acts.length);
+
         Stream<String> actorStream = actors.stream().filter(actor -> actor.split(",")[0].length() == 3);
         Stream<String> actressStream = actresses.stream().filter(actress -> Integer.parseInt(actress.split(",")[1]) > 40);
 
