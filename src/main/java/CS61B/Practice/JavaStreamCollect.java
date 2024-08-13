@@ -4,11 +4,12 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JavaStreamCollect {
     public static void main(String[] args) {
         practice1();
-
+        practice2();
         ArrayList<String> ls = new ArrayList<>();
         Collections.addAll(ls, "Jennie-24", "Lisa-23", "Rose-25", "Jisoo-26");
 
@@ -79,5 +80,34 @@ public class JavaStreamCollect {
 
         Map<String, Integer> map1 = families.stream().filter(s -> s.length() > 4).collect(Collectors.toMap(str -> str.split(",")[0], str -> Integer.parseInt(str.split(",")[1])));
         System.out.println(map1);
+    }
+
+    public static void practice2() {
+        class Actor {
+            final String name;
+            final int age;
+
+            Actor(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        ArrayList<String> actors = new ArrayList<>();
+        Collections.addAll(actors, "Jac,30", "Chris,40", "Tom,50", "Robert,60");
+        ArrayList<String> actresses = new ArrayList<>();
+        Collections.addAll(actresses, "Scarlett,30", "Elizabeth,40", "Gwyneth,50", "Natalie,60");
+
+        Stream<String> actorStream = actors.stream().filter(actor -> actor.split(",")[0].length() == 3);
+        Stream<String> actressStream = actresses.stream().filter(actress -> Integer.parseInt(actress.split(",")[1]) > 40);
+
+        List<Actor> wrapActors = Stream.concat(actressStream, actorStream).map(new Function<String, Actor>() {
+            @Override
+            public Actor apply(String s) {
+                return new Actor(s.split(",")[0], Integer.parseInt(s.split(",")[1]));
+            }
+        }).collect(Collectors.toList());
+
+        wrapActors.forEach(actor -> System.out.println(actor.name + " " + actor.age));
     }
 }
