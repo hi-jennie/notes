@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 
 public class JavaStreamCollect {
     public static void main(String[] args) {
+        practice1();
+
         ArrayList<String> ls = new ArrayList<>();
         Collections.addAll(ls, "Jennie-24", "Lisa-23", "Rose-25", "Jisoo-26");
 
@@ -57,5 +59,25 @@ public class JavaStreamCollect {
                 s -> Integer.parseInt(s.split("-")[1])));
         System.out.println(map2);
 
+    }
+
+    public static void practice1() {
+        ArrayList<String> families = new ArrayList<>();
+        Collections.addAll(families, "Jennie,24", "Rustin,28", "Aobi,2", "Turkey,2", "hah", "hah1");
+        Map<String, Integer> map = families.stream().filter(s -> s.length() > 4).collect(Collectors.toMap(new Function<String, String>() {
+            @Override
+            public String apply(String s) {
+                return s.split(",")[0];
+            }
+        }, new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) {
+                return Integer.parseInt(s.split(",")[1]);
+            }
+        }));
+        System.out.println(map);
+
+        Map<String, Integer> map1 = families.stream().filter(s -> s.length() > 4).collect(Collectors.toMap(str -> str.split(",")[0], str -> Integer.parseInt(str.split(",")[1])));
+        System.out.println(map1);
     }
 }
