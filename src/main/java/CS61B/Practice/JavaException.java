@@ -96,9 +96,9 @@ public class JavaException {
             return this.name;
         }
 
-        public void setName(String name) {
+        public void setName(String name) throws NameFormatException {
             if (name == null || name.length() < 3 || name.length() > 10) {
-                throw new IllegalArgumentException("Name cannot be null or empty");
+                throw new NameFormatException("Name cannot be null or empty");
             }
             this.name = name;
         }
@@ -116,15 +116,16 @@ public class JavaException {
             }
             this.age = age;
         }
+
+        public class NameFormatException extends Exception {
+            public NameFormatException() {
+            }
+
+            public NameFormatException(String message) {
+                super(message);
+            }
+        }
     }
 
-    public class NameFormatException extends Exception {
-        public NameFormatException() {
-            super();
-        }
 
-        public NameFormatException(String message) {
-            super(message);
-        }
-    }
 }
