@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                                                               
+##                                                                                                                       
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -327,10 +327,18 @@ public class IsBST {
 
 ## 8.14
 
-* Exception:
+* Exception:**JavaException.java**
     * RuntimeException:unchecked exception
     * CompileTimeException:checked exception
 
+* 异常处理方式：
+    * JVM处理：将异常信息打印到控制台，并且终止程序
+    * 自己处理：try-catch-finally——当代码块中出现异常时，会立即跳转到catch块中执行，然后继续执行finally块，不会中止虚拟机和程序运行
+    * throws:抛出异常，交给调用者处理
+    * 自定义异常
+        * 类名要反映信息
+        * 要继承对于的异常类
+        * 空参/带参构造器
 
 
 
