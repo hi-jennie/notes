@@ -175,7 +175,7 @@
     * 对每一个节点，从改节点到其所有后代叶节点（nil节点）的节点路径上，均包含相同数目的黑色节点
     * **添加节点时：默认红色效率更高**
 
-##                                                                                                           
+##                                                                                                               
 
 * **Set**:**Interface** SetDemo.java
 * **HashSet**:**no order**，**no duplicate**，**no index**
@@ -324,10 +324,12 @@ public class IsBST {
     * constructor reference:ConstructorReference.java
         * className::new
     * 特殊例子：类名::成员方法
-        
 
+## 8.14
 
-
+* Exception:
+    * RuntimeException:unchecked exception
+    * CompileTimeException:checked exception
 
 
 
